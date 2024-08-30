@@ -14,8 +14,7 @@ Trailhead: Get Started with Prompts and Prompt Builder
 1. [Trailhead: Prompt Builder Templates Superbadge Unit](https://trailhead.salesforce.com/content/learn/superbadges/superbadge_prompt_builder_templates_sbu)
 1. [YouTube: Get Started with Prompt Templates for Developers](https://www.youtube.com/watch?v=UuPWXstNjgs)
 
-### Models API
-
+### Models API
 1. [Models API Developer Guide](https://developer.salesforce.com/docs/einstein/genai/guide/models-api.html)
 1. [Models REST API Reference](https://developer.salesforce.com/docs/einstein/genai/references/models-api)
 1. [Models API Apex Reference](https://developer.salesforce.com/docs/einstein/genai/references/models-apex-api)
