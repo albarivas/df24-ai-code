@@ -1,8 +1,8 @@
-## DF24 - Buid Advanced AI-Powered Apps with Code
+### DF24 - Buid Advanced AI-Powered Apps with Code
 
 Find here the code examples shown in the session. This repo has been co-authored by [Maham Hassan](https://www.linkedin.com/in/maham-hassan-76603288/). 
 
-# Other resources:
+## Other resources:
 
 # Prompt Templates
 
