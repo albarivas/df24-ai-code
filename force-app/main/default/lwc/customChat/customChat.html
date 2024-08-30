@@ -1,0 +1,61 @@
+<template>
+    <div
+        class="slds-var-m-around_medium slds-grid slds-grid_vertical slds-box slds-theme_default"
+    >
+        <!-- Chat messages container -->
+        <div
+        class="slds-scrollable_y"
+        style="height: 440px"
+        lwc:ref="chatContainer"
+        >
+            <!-- Iterate over each message in the messages array -->
+            <template for:each={messages} for:item="message">
+                <div key={message.id} class="slds-var-m-around_small">
+                    <!-- If the message is from the user -->
+                    <template lwc:if={message.isUser}>
+                        <div class="custom-chat-message_outbound slds-var-p-around_small">
+                            <div class="slds-chat-message__body">
+                                <div class="slds-chat-message__text">{message.text}</div>
+                            </div>
+                        </div>
+                    </template>
+                    <!-- If the message is from the assistant -->
+                    <template lwc:else>
+                        <div class="custom-chat-message_inbound slds-var-p-around_small">
+                        <div class="slds-chat-message__body">
+                            <div class="slds-chat-message__text">{message.text}</div>
+                        </div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+            <!-- Loading indicator -->
+            <template lwc:if={isLoading}>
+                <div class="loading-container slds-var-m-around_small">
+                <div class="loading-indicator"></div>
+                </div>
+            </template>
+        </div>
+        <!-- User input textarea -->
+        <div class="slds-grid slds-grid_vertical-align-center">
+            <lightning-textarea
+                class="custom-textarea slds-size_full"
+                label="Type a message"
+                value={userMessage}
+                onchange={handleInputChange}
+                style="margin-bottom: 20px"
+            ></lightning-textarea>
+        </div>
+        <!-- Send button -->
+        <div class="slds-grid slds-grid_vertical-align-center">
+            <div class="slds-col slds-size_1-of-4">
+                <lightning-button
+                label="Send"
+                variant="brand"
+                onclick={handleSendMessage}
+                disabled={isLoading}
+                ></lightning-button>
+            </div>
+        </div>
+    </div>
+</template>

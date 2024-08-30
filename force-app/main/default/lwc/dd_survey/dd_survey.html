@@ -1,0 +1,117 @@
+<template>
+    <div  class="main-card">
+        <template if:false={showSurveyForm}>
+            <template if:false={showGenerateSurveyPage}>
+                <div class="event-logo-container">
+                    <img class="logo" src={eventLogo} />
+                </div>
+                <div class="event-list">
+                    <div class="choose-event-message">
+                        <p>CHOOSE EVENT TO GENERATE SURVEY</p>
+                    </div>
+                    <lightning-combobox
+                        name="Events"
+                        label="Event List"
+                        value={value}
+                        placeholder="Select Event"
+                        options={eventOptions}
+                        onchange={handleEventNameChange}
+                        class="styled-combobox"
+                    ></lightning-combobox>
+                </div>
+            </template>
+            
+        <template if:true={showGenerateSurveyPage}>
+        <div class="custom-card">
+            <h1 class="event-name">{selectedEvent.Name}</h1>
+            <img src={selectedEvent.Logo_Url__c} alt="Event Logo" class="event-logo"/>
+            <lightning-slider
+                label="Number of Questions to Generate"
+                value={numQuestions}
+                onchange={handleNumQuestionsChange}
+                min="1"
+                max="10"
+                class="slds-m-vertical_small">
+            </lightning-slider>
+            <button onclick={handleGenerateSurvey} class="generate-btn">Generate Survey</button>
+          
+        </div>
+    </template>
+    </template>
+         <template if:true={isLoading}>
+                <!-- <div class="custom-loader"></div> -->
+                  <lightning-spinner alternative-text="Loading" size="medium" class="loader"></lightning-spinner>
+            </template>
+    <template if:true={showSurveyForm}>
+        <template if:true={surveyQuestions.length}>
+            <div class="slds-m-around_medium questions-container">
+
+                <div title="Survey Questions" class="survey-card">
+        <h1  class="event-name">Dreamin Feedback Form</h1>
+
+                    <template for:each={visibleQuestions} for:item="question">
+                        <div class="question-card slds-box slds-m-bottom_small" key={question.id}>
+                            <div class="question-header">
+                                <h1 class="slds-text-heading_medium">{question.id}. {question.question}</h1>
+                                <button data-questionid={question.id} onclick={handleEditClick} class="edit-btn">&#9998;</button>
+                            </div>
+                            <template if:true={question.radioType}>
+                                <lightning-radio-group options={question.options}></lightning-radio-group>
+                            </template>
+                            <template if:true={question.multiSelectType}>
+                                <lightning-combobox name="progress" value={value} placeholder="Select Option" options={question.options} onchange={handleChange}></lightning-combobox>
+                            </template>
+                            <template if:true={question.numberType}>
+                                <lightning-input type="number" label="Rate" min="1" max="10"></lightning-input>
+                            </template>
+                            <template if:true={question.textType}>
+                                <lightning-input type="text" label="Your answer"></lightning-input>
+                            </template>
+                        </div>
+                    </template>
+                    <div class="pagination-container">
+                        <button class="pagination-btn" onclick={handlePreviousPage} disabled={isFirstPage} >Prev</button>
+                        <span>Page {currentPage} of {totalPages}</span>
+                        <button class="pagination-btn" onclick={handleNextPage} disabled={isLastPage} >Next</button>
+                    </div>
+                    <button onclick={handleSubmit} class="submit-btn">Save Survey</button>
+                </div>
+            </div>
+        </template>
+        <template if:true={error}>
+            <p class="error-message">{error}</p>
+        </template>
+
+        <template if:true={isModalOpen}>
+            <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 class="slds-text-heading_medium">Edit Question</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <lightning-input label="Edit Question" value={modalQuestion.question} onchange={handleModalQuestionChange}></lightning-input>
+
+                        <template if:true={modalQuestion.options}>
+                            <template for:each={modalQuestion.options} for:item="option" for:index="index">
+                                <div key={option.id} class="question-option">
+                                    <label>Option {option.id}</label>
+                                    <input value={option.value} data-index={index} onchange={handleModalOptionChange}></input>
+                                </div>
+                            </template>
+                        </template>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning-button variant="neutral" label="Cancel" onclick={closeModal}></lightning-button>
+                        <lightning-button variant="brand" label="Save" onclick={handleSaveModal}></lightning-button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+        </template>
+    </div>
+</template>

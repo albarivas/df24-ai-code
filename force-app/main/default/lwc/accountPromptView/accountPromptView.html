@@ -1,0 +1,18 @@
+<template>
+    <lightning-card  title="Related Cases Summary">
+        <div if:true={promptLoading}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </div>
+        <div if:false={promptLoading} style="padding: 20px">
+            <lightning-formatted-rich-text value={prompt}></lightning-formatted-rich-text>
+            <div style="display: inline-block; width:100%">
+                <template for:each={images} for:item="image">
+                    <img key={image} src={image} style="padding: 20px; margin: 0 auto; width: 100%;" />
+                </template>
+            </div>
+        </div>
+        <lightning-button label="Generate!" slot="actions" onclick={regenerateResponse}></lightning-button>
+    </lightning-card>
+  
+    
+</template>

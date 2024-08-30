@@ -1,0 +1,74 @@
+<template>
+    <div class="main-card">
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="medium" class="loader"></lightning-spinner>
+        </template>
+        <template if:false={showThankYouMessage}>
+            <template if:false={showSurveyForm}>
+                <template if:true={eventDetails}>
+                    <div class="custom-card">
+                        <h1 class="event-name">{eventDetails.Name}</h1>
+                        <img src={eventDetails.Logo_Url__c} alt="Event Logo" class="event-logo"/>
+                        <button class="generate-btn" onclick={handleGenerateSurvey}>Start Survey</button>
+                    </div>
+                </template>
+            </template>
+            <template if:true={showSurveyForm}>
+                <div class="slds-m-around_medium questions-container">
+                    <div title="Survey Questions" class="survey-card">
+                        <h1 class="event-name">Dreamin FeedBack Form</h1>
+                        <template for:each={visibleQuestions} for:item="question">
+                            <div class="question-card slds-box slds-m-bottom_small" key={question.id}>
+                                <div class="question-header">
+                                    <h1 class="slds-text-heading_medium">{question.question}</h1>
+                                </div>
+                                <template if:true={question.radioType}>
+                                    <div class="question-option">
+                                        <lightning-radio-group options={question.options} name={question.radioGroupName}
+                                            value={question.selectedOption} data-id={question.id} onchange={handleOptionChange}></lightning-radio-group>
+                                    </div>
+                                </template>
+                                <template if:true={question.multiSelectType}>
+                                    <div class="question-option">
+                                        <lightning-checkbox-group name="multiSelect" value={question.selectedOptions} 
+                                            options={question.options} data-id={question.id} onchange={handleCheckboxChange}></lightning-checkbox-group>
+                                    </div>
+                                </template>
+                                <template if:true={question.numberType}>
+                                    <div class="question-option">
+                                        <lightning-input type="number" min="1" max="10" data-id={question.id} 
+                                            value={question.response} onchange={handleInputChange}></lightning-input>
+                                    </div>
+                                </template>
+                                <template if:true={question.textType}>
+                                    <div class="question-option">
+                                        <lightning-input type="text" data-id={question.id} 
+                                            value={question.response} onchange={handleInputChange}></lightning-input>
+                                    </div>
+                                </template>
+                            </div>
+                        </template>
+                        <div class="pagination-container">
+                            <button class="pagination-btn" onclick={handlePreviousPage} disabled={isFirstPage}>Prev</button>
+                            <span>Page {currentPage} of {totalPages}</span>
+                            <button class="pagination-btn" onclick={handleNextPage} disabled={isLastPage}>Next</button>
+                        </div>
+                        <template if:true={isLastPage}>
+                            <button onclick={handleSubmit} class="submit-btn">Submit Survey</button>
+                        </template>
+                    </div>
+                </div>
+            </template>
+            <template if:true={error}>
+                <p class="error-message">{error}</p>
+            </template>
+        </template>
+        <template if:true={showThankYouMessage}>
+            <div class="thank-you-message">
+                <h1>Thank You!</h1>
+                <p>Your feedback is valuable to us. We appreciate you taking the time to complete the survey.</p>
+                <p>If you have any further comments or questions, feel free to reach out to us.</p>
+            </div>
+        </template>
+    </div>
+</template>

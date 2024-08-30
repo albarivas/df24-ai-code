@@ -1,0 +1,28 @@
+<template>
+    <lightning-card
+        title="Generate Newsletter"
+        icon-name="utility:socialshare"
+    >
+        <div class="slds-var-p-around_small">
+            <template lwc:if={error}>
+                <div class="error">{error}</div>
+                <lightning-button
+                    onclick={generateNewsletter}
+                    label="Try again!"
+                    class="slds-align_absolute-center"
+                ></lightning-button>
+            </template>
+            <template lwc:else>
+                <lightning-button
+                    onclick={generateNewsletter}
+                    label="Generate Newsletter"
+                ></lightning-button>
+                <div class="newsletter" lwc:dom="manual"></div>
+            </template>
+            <template lwc:if={showSpinner}>
+                <lightning-spinner alternative-text="Loading..." size="small">
+                </lightning-spinner>
+            </template>
+        </div>
+    </lightning-card>
+</template>
