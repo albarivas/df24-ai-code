@@ -4,6 +4,8 @@ Find here the code examples shown in the session. This repo has been co-authored
 
 ## Other resources:
 
+1. [Slides](https://drive.google.com/file/d/1RyCkREBBr_Odo8IXUV4HMuMaRzK71NNu/view?usp=sharing)
+
 ### Prompt Templates
 
 1. [Generative AI Developer Guide (Prompt Builder)](https://developer.salesforce.com/docs/einstein/genai/guide/get-started-prompt-builder.html)

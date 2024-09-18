@@ -67,7 +67,7 @@ export default class ChatLWC extends LightningElement {
       }));
 
       // Call Apex method to fetch chat response
-      createChatGenerations({ userPrompt: JSON.stringify(messageArray), systemPrompt: this.systemPrompt})
+      createChatGenerations({ serializedMessages: JSON.stringify(messageArray), systemPrompt: this.systemPrompt})
         .then((result) => {
           this.addMessage(result);
         })
