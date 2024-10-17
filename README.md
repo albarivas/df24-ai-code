@@ -22,6 +22,7 @@ Trailhead: Get Started with Prompts and Prompt Builder
 1. [Models REST API Reference](https://developer.salesforce.com/docs/einstein/genai/references/models-api)
 1. [Models API Apex Reference](https://developer.salesforce.com/docs/einstein/genai/references/models-apex-api)
 1. [Postman Collection for Models API](https://www.postman.com/salesforce-developers/workspace~34382471-0c97-40e5-a206-f947271665c4/collection/onih7sc/models-apis-beta)
-1. [Explore the Models API with Postman](https://www.youtube.com/watch?v=-xZzJb1aF2M)
+1. [Quick Take: Explore the Models API with Postman](https://www.youtube.com/watch?v=-xZzJb1aF2M)
+1. [codeLive: Exploring the New Models API (Beta)](https://www.youtube.com/watch?v=hf95_ghGeNI)
 1. [Trailhead: Get Started with Einstein Models API](https://trailhead.salesforce.com/content/learn/modules/get-started-with-einstein-models-api)
 
