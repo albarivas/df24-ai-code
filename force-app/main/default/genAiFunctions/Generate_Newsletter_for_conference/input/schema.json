@@ -1,0 +1,14 @@
+{
+  "required" : [ "conferenceId" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "conferenceId" : {
+      "title" : "conferenceId",
+      "description" : "conference for which we want to generate the newsletter.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

@@ -1,0 +1,14 @@
+{
+  "required" : [ "conferenceName" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "conferenceName" : {
+      "title" : "conferenceName",
+      "description" : "Name of the conference",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

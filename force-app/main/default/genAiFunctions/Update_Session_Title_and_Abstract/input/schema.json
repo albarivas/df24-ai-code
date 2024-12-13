@@ -1,0 +1,28 @@
+{
+  "required" : [ "newSessionAbstract", "newSessionTitle", "sessionId" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "newSessionAbstract" : {
+      "title" : "newSessionAbstract",
+      "description" : "New abstract for the session we want to update",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "newSessionTitle" : {
+      "title" : "newSessionTitle",
+      "description" : "New title for the session we want to update",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "sessionId" : {
+      "title" : "sessionId",
+      "description" : "Id for the session we want to update",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

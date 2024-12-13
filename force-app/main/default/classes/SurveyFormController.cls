@@ -1,9 +1,9 @@
 public without sharing class SurveyFormController {
 
     @AuraEnabled(cacheable=true)
-    public static Event__c getEventDetails(String eventId) {
+    public static Conference__c getEventDetails(String eventId) {
         System.debug('Event Id: ' + eventId);
-        return [SELECT Id, Name, Logo_Url__c FROM Event__c WHERE Id = :eventId LIMIT 1];
+        return [SELECT Id, Name, Logo_Url__c FROM Conference__c WHERE Id = :eventId LIMIT 1];
     }
 
     @AuraEnabled(cacheable=true)

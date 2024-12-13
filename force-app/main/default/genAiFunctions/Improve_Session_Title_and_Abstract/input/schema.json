@@ -1,0 +1,14 @@
+{
+  "required" : [ "sessionId" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "sessionId" : {
+      "title" : "sessionId",
+      "description" : "Id of the session for which we want to improve its title and abstract.",
+      "lightning:type" : "lightning__recordIdType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

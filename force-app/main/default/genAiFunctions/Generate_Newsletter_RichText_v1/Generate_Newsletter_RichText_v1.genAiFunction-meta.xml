@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Generates a newsletter for a given conference.</description>
+    <invocationTarget>Generate_Newsletter_RichText_Plain</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <masterLabel>Generate Newsletter RichText v1</masterLabel>
+</GenAiFunction>

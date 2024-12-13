@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Improves title and abstract for a given session.</description>
+    <invocationTarget>ImproveSessionDescriptionAction</invocationTarget>
+    <invocationTargetType>apex</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <masterLabel>Improve Session Title and Abstract</masterLabel>
+</GenAiFunction>

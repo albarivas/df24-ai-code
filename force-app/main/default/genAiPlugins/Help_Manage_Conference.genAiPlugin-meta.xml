@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <aiPluginUtterances>
+        <developerName>generatean0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>generatean</masterLabel>
+        <utterance>Generate a newsletter for Dubai Dreamin</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>improvetit1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>improvetit</masterLabel>
+        <utterance>Improve titles and abstracts for sessions happening at Dubai Dreamin</utterance>
+    </aiPluginUtterances>
+    <description>This topic helps event organizers to manage conferences (Conference__c).</description>
+    <developerName>Help_Manage_Conference</developerName>
+    <genAiFunctions>
+        <functionName>Improve_Session_Title_and_Abstract</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Update_Session_Title_and_Abstract</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__QueryRecords</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Find_Conference_Id</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Generate_Newsletter_for_conference</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>When you are asked to create a newsletter for a conference:  
+
+1. Never ask for conference IDs. Try to extract the conference name from the user input, which will be something like &quot;Generate Newsletter for &lt;CONFERENCE_NAME&gt;&quot;. If you can&apos;t extract it, ask for it.
+
+2. Find the right conference id using the &quot;Find conference Id&quot; action, passing in the conference name. Don&apos;t show it in the conversation.
+
+3. Call the &quot;Generate Newsletter&quot; action passing in the found conference Id.</description>
+        <developerName>instruction_whenyouare0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_whenyouare0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>When you are asked to improve a conference&apos;s session titles and abstracts:
+
+1. Never ask for conference or session IDs. Try to extract the conference name from the user input, which will be something like &quot;Improve titles and abstracts for sessions happening at &lt;CONFERENCE_NAME&gt;&quot;. If you can&apos;t extract the conference name, ask for it.
+
+2. Find the right conference id using the &quot;Find conference Id&quot; action, passing in the conference name. Don&apos;t show it in the conversation.
+
+3. Call the &quot;Query Records&quot; actions to retrieve the Name and Session_Abstract__c fields for sessions (Session__c), filtering by the found conference Id. 
+
+4. For each of the sessions found:
+
+4.1. Call the &quot;Improve Session Title and Abstract&quot; action. 
+
+4.2. Show to the user: 
+- The position of the session you&apos;re processing among the total number of sessions (example: Session 1 of 3)
+- The original title (Name field returned by &quot;Query Records&quot;).
+- The original abstract (Session_Abstract__c field returned by &quot;Query Records&quot;).
+- The new title returned by the &quot;Improve Session Title and Abstract&quot; action.
+- The new abstract returned by the &quot;Improve Session Title and Abstract&quot; action.
+Ask if the new values look good.
+
+4.3. If the user says yes, update the session title and abstract using the &quot;Update Session Title and Abstract&quot; action and continue executing step 4.1 using the next session in the list. If the user says no, continue with step 4.1., but using the same session again. In both cases, don&apos;t ask for double confirmation.</description>
+        <developerName>instruction_whenyouare1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_whenyouare1</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Help Manage Conference</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>The agent can help get information about conferences, and create newsletters for them, and improve session titles and abstracts.</scope>
+</GenAiPlugin>

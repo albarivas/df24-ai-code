@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersion>4</activeVersion>
+    <developerName>Generate_Newsletter_RichText_Plain</developerName>
+    <masterLabel>Generate Newsletter RichText v1</masterLabel>
+    <templateVersions>
+        <content>Generate a newsletter that promotes the next conference in rich text format:
+
+{!$RecordSnapshot:Conference.Snapshot}
+
+Use different styles to make the newsletter nicer, use different sizes and colors for titles and include emoticons. 
+
+Include information about the speakers and sponsors and also the conference logo. Don&apos;t include information about the survey or the owner. 
+
+Invite readers to join the conference, and make the description and event information more appealing.
+
+The response must be valid rich text and not contain anything else.
+</content>
+        <inputs>
+            <apiName>Conference</apiName>
+            <definition>SOBJECT://Conference__c</definition>
+            <masterLabel>Conference</masterLabel>
+            <referenceName>Input:Conference</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT35Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getDataForGrounding</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>recordId</parameterName>
+                <valueExpression>{!$Input:Conference.Id}</valueExpression>
+            </parameters>
+            <referenceName>RecordSnapshot:Conference</referenceName>
+        </templateDataProviders>
+        <versionNumber>1</versionNumber>
+    </templateVersions>
+    <templateVersions>
+        <content>Generate a newsletter that promotes the next conference in rich text format:
+
+{!$RecordSnapshot:Conference.Snapshot}
+
+Use different styles to make the newsletter nicer, use different sizes and colors for titles and include emoticons. 
+
+Include information about the speakers and sponsors and also the conference logo. Don&apos;t include information about the survey or the owner. 
+
+Invite readers to join the conference, and make the description and event information more appealing.
+
+The response must be valid rich text and not contain anything else.
+</content>
+        <inputs>
+            <apiName>Conference</apiName>
+            <definition>SOBJECT://Conference__c</definition>
+            <masterLabel>Conference</masterLabel>
+            <referenceName>Input:Conference</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getDataForGrounding</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>recordId</parameterName>
+                <valueExpression>{!$Input:Conference.Id}</valueExpression>
+            </parameters>
+            <referenceName>RecordSnapshot:Conference</referenceName>
+        </templateDataProviders>
+        <versionNumber>2</versionNumber>
+    </templateVersions>
+    <templateVersions>
+        <content>Generate a newsletter that promotes the next conference in rich text format:
+
+{!$RecordSnapshot:Conference.Snapshot}
+
+Use different styles to make the newsletter nicer, use different sizes and colors for titles and include emoticons. 
+
+Include information about the speakers and sponsors and also the conference logo. Don&apos;t include information about the survey or the owner. 
+
+Invite readers to join the conference, and make the description and event information more appealing.
+
+The response must be valid rich text and not contain anything else.
+</content>
+        <inputs>
+            <apiName>Conference</apiName>
+            <definition>SOBJECT://Conference__c</definition>
+            <masterLabel>Conference</masterLabel>
+            <referenceName>Input:Conference</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getDataForGrounding</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>recordId</parameterName>
+                <valueExpression>{!$Input:Conference.Id}</valueExpression>
+            </parameters>
+            <referenceName>RecordSnapshot:Conference</referenceName>
+        </templateDataProviders>
+        <versionNumber>3</versionNumber>
+    </templateVersions>
+    <templateVersions>
+        <content>Generate a newsletter that promotes the next conference in rich text format:
+
+{!$RecordSnapshot:Conference.Snapshot}
+
+Use different styles to make the newsletter nicer, use different sizes and colors for titles and include emoticons. 
+
+Include information about the speakers and sponsors and also the conference logo. Don&apos;t include information about the survey or the owner. 
+
+Invite readers to join the conference, and make the description and event information more appealing.
+
+The response must be valid rich text and not contain anything else.
+</content>
+        <inputs>
+            <apiName>Conference</apiName>
+            <definition>SOBJECT://Conference__c</definition>
+            <masterLabel>Conference</masterLabel>
+            <referenceName>Input:Conference</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getDataForGrounding</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>recordId</parameterName>
+                <valueExpression>{!$Input:Conference.Id}</valueExpression>
+            </parameters>
+            <referenceName>RecordSnapshot:Conference</referenceName>
+        </templateDataProviders>
+        <versionNumber>4</versionNumber>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>
