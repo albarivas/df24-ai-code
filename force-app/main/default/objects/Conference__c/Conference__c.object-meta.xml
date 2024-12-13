@@ -159,12 +159,12 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>Event</label>
+    <label>Conference</label>
     <nameField>
-        <label>Event Name</label>
+        <label>Conference Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Events</pluralLabel>
+    <pluralLabel>Conferences</pluralLabel>
     <searchLayouts></searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

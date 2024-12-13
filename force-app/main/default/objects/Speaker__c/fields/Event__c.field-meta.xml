@@ -3,7 +3,7 @@
     <fullName>Event__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <label>Event</label>
-    <referenceTo>Event__c</referenceTo>
+    <referenceTo>Conference__c</referenceTo>
     <relationshipLabel>Speakers</relationshipLabel>
     <relationshipName>Speakers</relationshipName>
     <required>false</required>
